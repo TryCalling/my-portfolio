@@ -1,0 +1,10 @@
+<div class="aboutme-container">
+    <h2>{{ name }}</h2>
+    <p>{{ bio }}</p>
+    <ul>
+      <li *ngFor="let skill of skills">{{ skill }}</li>
+    </ul>
+    <a [href]="socialLinks.github" target="_blank">GitHub</a>
+    <a [href]="socialLinks.linkedin" target="_blank">LinkedIn</a>
+  </div>
+  

@@ -1,0 +1,16 @@
+<div class="home-container">
+    <h1>{{ greeting }}, EveryOne</h1>
+    <h2>{{ currentTime }}</h2>
+    <p class="learning-text">Learning is the key to unlocking new possibilities 🔑</p>
+
+    <div class="card-container">
+        <div class="card" *ngFor="let item of learningTopics">
+          <p>Path: {{ item.icon }}</p>
+          <img [src]="item.icon" [alt]="item.name">
+          <p>{{ item.name }}</p>
+        </div>
+    </div>
+
+  
+  
+  
