@@ -1,2 +1,141 @@
-<app-navbar></app-navbar> <!-- Always show navbar -->
-<router-outlet></router-outlet> <!-- Render the routed components (Home or About) -->
+<div class="page-shell">
+  <div class="ambient ambient-left"></div>
+  <div class="ambient ambient-right"></div>
+
+  <header class="hero">
+    <div class="hero-copy reveal">
+      <p class="eyebrow">Automation Engineer Track • Junior DevOps Direction</p>
+      <h1>Neang Sroytry</h1>
+      <p class="hero-summary">
+        IT Engineering graduate with banking operations experience, Python automation practice,
+        deployment support exposure, and a growing DevOps and DevSecOps portfolio.
+      </p>
+
+      <div class="hero-actions">
+        <a class="button button-primary" href="https://github.com/TryCalling" target="_blank" rel="noreferrer">
+          View GitHub
+        </a>
+        <a class="button button-secondary" href="mailto:sroytryneang1708@gmail.com">
+          Contact Me
+        </a>
+      </div>
+    </div>
+
+    <aside class="hero-panel reveal reveal-delay-1">
+      <div class="panel-tag">Current Positioning</div>
+      <p class="panel-role">Banking Automation, Backend Operations, Release Support</p>
+      <ul class="panel-points">
+        <li>Based in Phnom Penh, Cambodia</li>
+        <li>Focused on banking systems, release workflows, and platform reliability</li>
+        <li>Building portfolio work around DevOps, GitOps, Kubernetes, and DevSecOps</li>
+      </ul>
+    </aside>
+  </header>
+
+  <section class="metrics reveal reveal-delay-1">
+    <article class="metric-card" *ngFor="let metric of metrics">
+      <p class="metric-label">{{ metric.label }}</p>
+      <h2>{{ metric.value }}</h2>
+      <p>{{ metric.note }}</p>
+    </article>
+  </section>
+
+  <main class="content-grid">
+    <section class="content-card content-card-wide reveal reveal-delay-1">
+      <div class="section-heading">
+        <p class="section-kicker">Profile</p>
+        <h2>Professional Summary</h2>
+      </div>
+      <p class="section-copy">
+        I come from a banking support and operational background where careful validation,
+        troubleshooting, and production awareness matter every day. My current path is focused
+        on growing from hands-on system support into stronger Automation, Junior DevOps, and
+        platform engineering work.
+      </p>
+      <p class="section-copy">
+        The projects on this portfolio are designed to reflect that direction clearly: release
+        control, DevSecOps pipelines, reconciliation workflows, Kubernetes deployment thinking,
+        and safer delivery practices.
+      </p>
+    </section>
+
+    <section class="content-card reveal reveal-delay-2">
+      <div class="section-heading">
+        <p class="section-kicker">Capability</p>
+        <h2>Core Skills</h2>
+      </div>
+      <ul class="detail-list">
+        <li *ngFor="let capability of coreCapabilities">{{ capability }}</li>
+      </ul>
+    </section>
+
+    <section class="content-card reveal reveal-delay-2">
+      <div class="section-heading">
+        <p class="section-kicker">Toolset</p>
+        <h2>Technical Stack</h2>
+      </div>
+      <div class="chip-group">
+        <span class="chip" *ngFor="let tool of toolbelt">{{ tool }}</span>
+      </div>
+    </section>
+
+    <section class="content-card content-card-wide reveal reveal-delay-2">
+      <div class="section-heading">
+        <p class="section-kicker">Experience</p>
+        <h2>Relevant Work</h2>
+      </div>
+      <div class="timeline-item" *ngFor="let item of experience">
+        <div class="timeline-meta">
+          <p class="timeline-period">{{ item.period }}</p>
+          <h3>{{ item.title }}</h3>
+          <p class="timeline-company">{{ item.company }}</p>
+        </div>
+        <div class="timeline-content">
+          <p>{{ item.summary }}</p>
+          <ul class="detail-list compact">
+            <li *ngFor="let point of item.highlights">{{ point }}</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-card content-card-wide reveal reveal-delay-3">
+      <div class="section-heading">
+        <p class="section-kicker">Portfolio Projects</p>
+        <h2>Work That Matches My Direction</h2>
+      </div>
+      <div class="project-grid">
+        <article class="project-card" *ngFor="let project of projects">
+          <p class="project-role">{{ project.role }}</p>
+          <h3>{{ project.name }}</h3>
+          <p class="project-stack">{{ project.stack }}</p>
+          <p class="project-summary">{{ project.summary }}</p>
+          <a [href]="project.link" target="_blank" rel="noreferrer">Open Repository</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="content-card reveal reveal-delay-3">
+      <div class="section-heading">
+        <p class="section-kicker">Work Style</p>
+        <h2>How I Approach Delivery</h2>
+      </div>
+      <ul class="detail-list">
+        <li *ngFor="let principle of principles">{{ principle }}</li>
+      </ul>
+    </section>
+
+    <section class="content-card reveal reveal-delay-3">
+      <div class="section-heading">
+        <p class="section-kicker">Contact</p>
+        <h2>Let’s Connect</h2>
+      </div>
+      <div class="contact-list">
+        <a class="contact-item" *ngFor="let contact of contactLinks" [href]="contact.href" target="_blank" rel="noreferrer">
+          <span>{{ contact.label }}</span>
+          <strong>{{ contact.value }}</strong>
+        </a>
+      </div>
+    </section>
+  </main>
+</div>
